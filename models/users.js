@@ -2,10 +2,24 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
 const UserSchema = mongoose.Schema({
-    email: { type: String, required: true, unique: true},
-    password: { type: String, required: true },
-    name: { type: String, required: true},
-    role: { type: String, enum: ['admin', 'user'], required: true },
+    email: {
+        type: String, 
+        required: true, 
+        unique: true,
+    },
+    password: { 
+        type: String, 
+        required: true, 
+    },
+    name: { 
+        type: String, 
+        required: true,
+    },
+    role: { 
+        type: String, 
+        enum: ['admin', 'user'], 
+        required: true 
+    },
 });
 
 const UsersModel = mongoose.model('users', UserSchema, 'users');
